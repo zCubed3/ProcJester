@@ -18,16 +18,6 @@ BOOL APIENTRY DllMain(HMODULE hModule,
         MessageBeep(0xFFFFFFFF);
         MessageBoxA(NULL, "DLL_THREAD_ATTACH", "", MB_OK);
         break;
-
-    case DLL_THREAD_DETACH:
-        MessageBeep(0xFFFFFFFF);
-        MessageBoxA(NULL, "DLL_THREAD_DETACH", "", MB_OK);
-        break;
-
-    case DLL_PROCESS_DETACH:
-        MessageBeep(0xFFFFFFFF);
-        MessageBoxA(NULL, "DLL_PROCESS_DETACH", "", MB_OK);
-        break;
     }
 
     return TRUE;
