@@ -107,8 +107,8 @@ main(int argc, char** argv) {
 
     while (1) {
         AttachToProcessesOfName(name);
-        Sleep(7500);
-        //printf("\nPress enter to cycle again...\n");
-        //getchar();
+        //Sleep(7500);
+        printf("\nPress enter to look for processes again...\n");
+        getchar();
     }
 }
