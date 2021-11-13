@@ -1,0 +1,8 @@
+# We need to forbid .idea from being tracked
+.idea/
+.vs/
+
+# Then forbid builds
+cmake-*/
+builds/
+obj/
