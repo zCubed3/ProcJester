@@ -101,12 +101,24 @@ main(int argc, char** argv) {
         return 1;
     }
 
+    BOOL closeAfterFirstIteration = 0;
+    if (argc >= 4) {
+        if (strcmp(argv[3], "TRUE") == 0) {
+            closeAfterFirstIteration = 1;
+            printf("Will close automatically after first iteration!\n");
+        }
+    }
+
     char* name = argv[1];
     dllToInject = argv[2];
     printf("Looking for exe's with names containing '%s'\nInjecting %s\n\n", argv[1], dllToInject);
 
     while (1) {
         AttachToProcessesOfName(name);
+
+        if (closeAfterFirstIteration)
+            break;
+
         //Sleep(7500);
         printf("\nPress enter to look for processes again...\n");
         getchar();
